@@ -28,7 +28,7 @@ import org.springframework.test.context.ContextConfiguration
 internal class UserJsonFeignClientPlainWithSpringConfigTestsApp
 
 @TestInstance(PER_CLASS)
-@AutoConfigureWireMock //(port = 0)
+@AutoConfigureWireMock(port = 0)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @DisplayNameGeneration(ReplaceUnderscores::class)
 @DisplayName("User json feign client plain with spring config tests")

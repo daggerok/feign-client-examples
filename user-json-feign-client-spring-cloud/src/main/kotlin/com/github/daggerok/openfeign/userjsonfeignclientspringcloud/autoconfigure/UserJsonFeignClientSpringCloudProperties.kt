@@ -1,14 +1,11 @@
-package com.github.daggerok.openfeign.userjsonspringcloudfeignclient.autoconfigure
+package com.github.daggerok.openfeign.userjsonfeignclientspringcloud.autoconfigure
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.ConstructorBinding
 
-/**
- * Configuration to connect user-json-openfeign-client to user-json-server.
- */
 @ConstructorBinding
-@ConfigurationProperties("user-json-spring-cloud-feign-client")
-data class UserJsonSpringCloudFeignClientProperties(
+@ConfigurationProperties("user-json-feign-client-spring-cloud")
+data class UserJsonFeignClientSpringCloudProperties(
     val host: String = "undefined",
     val port: Int = -1,
     val contextPath: String = "/",

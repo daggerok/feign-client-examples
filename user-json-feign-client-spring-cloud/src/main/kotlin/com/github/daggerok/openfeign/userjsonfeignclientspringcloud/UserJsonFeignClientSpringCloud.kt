@@ -1,4 +1,4 @@
-package com.github.daggerok.openfeign.userjsonspringcloudfeignclient
+package com.github.daggerok.openfeign.userjsonfeignclientspringcloud
 
 import com.github.daggerok.openfeign.jsonuserapi.CreateUserCommand
 import com.github.daggerok.openfeign.jsonuserapi.UserDocument
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 
 @FeignClient(
-    name = "user-json-spring-cloud-feign-client",
-    url = "\${user-json-spring-cloud-feign-client.url}",
+    name = "user-json-feign-client-spring-cloud",
+    url = "\${user-json-feign-client-spring-cloud.url}",
 )
-interface UserJsonSpringCloudFeignClient {
+interface UserJsonFeignClientSpringCloud {
 
     @PostMapping("/api/v1/create-user")
     fun createUser(@RequestBody request: CreateUserCommand): UserDocument

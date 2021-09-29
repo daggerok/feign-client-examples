@@ -1,4 +1,4 @@
-package com.github.daggerok.openfeign.userjsonspringcloudfeignclient
+package com.github.daggerok.openfeign.userjsonfeignclientspringcloud
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.github.daggerok.openfeign.jsonuserapi.CreateUserCommand
@@ -33,8 +33,8 @@ internal class UserJsonSpringCloudFeignClientTestsApp
 @DisplayNameGeneration(ReplaceUnderscores::class)
 @DisplayName("User json spring-cloud openfeign client tests")
 @ContextConfiguration(classes = [UserJsonSpringCloudFeignClientTestsApp::class])
-class UserJsonSpringCloudFeignClientTests @Autowired constructor(
-    val userJsonSpringCloudFeignClient: UserJsonSpringCloudFeignClient,
+class UserJsonFeignClientSpringCloudTests @Autowired constructor(
+    val userJsonFeignClientSpringCloud: UserJsonFeignClientSpringCloud,
     val objectMapper: ObjectMapper,
 ) {
 
@@ -76,7 +76,7 @@ class UserJsonSpringCloudFeignClientTests @Autowired constructor(
         )
 
         // when
-        val document = userJsonSpringCloudFeignClient.createUser(createUserCommand)
+        val document = userJsonFeignClientSpringCloud.createUser(createUserCommand)
 
         // then
         assertThat(document.userDTO.name).isEqualTo("Maksimko")
@@ -110,7 +110,7 @@ class UserJsonSpringCloudFeignClientTests @Autowired constructor(
         )
 
         // when
-        val document = userJsonSpringCloudFeignClient.getUsersByAge(38)
+        val document = userJsonFeignClientSpringCloud.getUsersByAge(38)
 
         // then
         val (name, age) = document.users.first()

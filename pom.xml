@@ -19,7 +19,7 @@
         <module>user-json-api</module>
         <module>user-json-feign-client-plain</module>
         <module>user-json-feign-client-plain-with-spring-config</module>
-        <module>user-json-spring-cloud-feign-client</module>
+        <module>user-json-feign-client-spring-cloud</module>
         <module>user-json-spring-web-server</module>
     </modules>
     <properties>

@@ -1,6 +1,6 @@
-package com.github.daggerok.openfeign.userjsonspringcloudfeignclient.autoconfigure
+package com.github.daggerok.openfeign.userjsonfeignclientspringcloud.autoconfigure
 
-import com.github.daggerok.openfeign.userjsonspringcloudfeignclient.UserJsonSpringCloudFeignClient
+import com.github.daggerok.openfeign.userjsonfeignclientspringcloud.UserJsonFeignClientSpringCloud
 import feign.Logger
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass
@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 @ConditionalOnMissingClass
-@EnableFeignClients(clients = [UserJsonSpringCloudFeignClient::class])
-@EnableConfigurationProperties(UserJsonSpringCloudFeignClientProperties::class)
-class UserJsonSpringCloudFeignClientAutoConfiguration {
+@EnableFeignClients(clients = [UserJsonFeignClientSpringCloud::class])
+@EnableConfigurationProperties(UserJsonFeignClientSpringCloudProperties::class)
+class UserJsonFeignClientSpringCloudAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean

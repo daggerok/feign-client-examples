@@ -10,8 +10,8 @@
     </parent>
     <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.daggerok.openfeign.userjsonspringcloudfeignclient</groupId>
-    <artifactId>user-json-spring-cloud-feign-client</artifactId>
+    <groupId>com.github.daggerok.openfeign.userjsonfeignclientspringcloud</groupId>
+    <artifactId>user-json-feign-client-spring-cloud</artifactId>
     <name>${project.artifactId}</name>
     <description>JSON API</description>
     <dependencies>

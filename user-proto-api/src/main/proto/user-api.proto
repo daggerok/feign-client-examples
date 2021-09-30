@@ -1,0 +1,35 @@
+syntax = "proto2";
+
+package com.github.daggerok.openfeign.userprotoapi;
+
+option java_package = "com.github.daggerok.openfeign.userprotoapi";
+option java_multiple_files = true;
+
+// Commands
+
+message CreateUserCommand {
+    required UserDTO userDTO = 1;
+}
+
+// Queries
+
+message GetUsersByAgeQuery {
+    required uint32 age = 1;
+}
+
+// Documents
+
+message UserDocument {
+    required UserDTO userDTO = 1;
+}
+
+message UsersDocument {
+    repeated UserDTO users = 1;
+}
+
+// DTOs
+
+message UserDTO {
+    required string name = 1;
+    required uint32 age = 2;
+}

@@ -8,7 +8,7 @@ import feign.Param
 import feign.RequestLine
 
 @Headers("Content-Type: application/json")
-interface UserJsonFeignClientPlainWithSpringConfig {
+interface UserClient {
 
     @RequestLine("POST /api/v1/create-user")
     fun createUser(request: CreateUserCommand): UserDocument

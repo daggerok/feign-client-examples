@@ -25,18 +25,15 @@ import org.springframework.http.HttpStatus
 import org.springframework.test.context.ContextConfiguration
 
 @SpringBootApplication
-internal class UserJsonFeignClientPlainTestsApp
+internal class UserClientTestsApp
 
 @TestInstance(PER_CLASS)
 @AutoConfigureWireMock(port = 0)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @DisplayNameGeneration(ReplaceUnderscores::class)
 @DisplayName("User json feign client plain tests")
-@ContextConfiguration(classes = [UserJsonFeignClientPlainTestsApp::class])
-class UserClientTests @Autowired constructor(
-    val objectMapper: ObjectMapper,
-    val userClient: UserClient,
-) {
+@ContextConfiguration(classes = [UserClientTestsApp::class])
+class UserClientTests @Autowired constructor(val objectMapper: ObjectMapper, val userClient: UserClient) {
 
     @Test
     fun `should create user`() {

@@ -25,18 +25,15 @@ import org.springframework.http.HttpStatus
 import org.springframework.test.context.ContextConfiguration
 
 @SpringBootApplication
-internal class UserJsonFeignClientPlainWithSpringConfigTestsApp
+internal class UserClientTestsApp
 
 @TestInstance(PER_CLASS)
 @AutoConfigureWireMock(port = 0)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @DisplayNameGeneration(ReplaceUnderscores::class)
+@ContextConfiguration(classes = [UserClientTestsApp::class])
 @DisplayName("User json feign client plain with spring config tests")
-@ContextConfiguration(classes = [UserJsonFeignClientPlainWithSpringConfigTestsApp::class])
-class UserJsonFeignClientPlainWithSpringConfigTests @Autowired constructor(
-    val userJsonFeignClientPlainWithSpringConfig: UserJsonFeignClientPlainWithSpringConfig,
-    val objectMapper: ObjectMapper,
-) {
+class UserClientTests @Autowired constructor(val userClient: UserClient, val objectMapper: ObjectMapper) {
 
     @Test
     fun `should create user`() {
@@ -51,7 +48,7 @@ class UserJsonFeignClientPlainWithSpringConfigTests @Autowired constructor(
             WireMock.post(urlPathEqualTo("/api/v1/create-user"))
                 .withHeader("Content-Type", containing("application/json"))
                 .withRequestBody(
-                    equalToJson( // equalTo(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(..))
+                    equalToJson(
                         objectMapper.writeValueAsString(
                             createUserCommand
                         )
@@ -76,7 +73,7 @@ class UserJsonFeignClientPlainWithSpringConfigTests @Autowired constructor(
         )
 
         // when
-        val document = userJsonFeignClientPlainWithSpringConfig.createUser(createUserCommand)
+        val document = userClient.createUser(createUserCommand)
 
         // then
         assertThat(document.userDTO.name).isEqualTo("Maksimko")
@@ -110,7 +107,7 @@ class UserJsonFeignClientPlainWithSpringConfigTests @Autowired constructor(
         )
 
         // when
-        val document = userJsonFeignClientPlainWithSpringConfig.getUsersByAge(38)
+        val document = userClient.getUsersByAge(38)
 
         // then
         val (name, age) = document.users.first()

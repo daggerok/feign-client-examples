@@ -1,6 +1,6 @@
 package com.github.daggerok.openfeign.userjsonfeignclientplainwithspringconfig.autoconfigure
 
-import com.github.daggerok.openfeign.userjsonfeignclientplainwithspringconfig.UserJsonFeignClientPlainWithSpringConfig
+import com.github.daggerok.openfeign.userjsonfeignclientplainwithspringconfig.UserClient
 import feign.Feign
 import feign.Logger
 import feign.codec.Decoder
@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 private typealias Props = UserJsonFeignClientPlainWithSpringConfigProperties
-private typealias Client = UserJsonFeignClientPlainWithSpringConfig
+private typealias Client = UserClient
 
 @Configuration
 @ConditionalOnMissingClass
@@ -27,22 +27,26 @@ class UserJsonFeignClientPlainWithSpringConfigAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    fun encoder(httpMessageConverters: ObjectFactory<HttpMessageConverters>): Encoder =
+    fun userJsonFeignClientPlainWithSpringConfigEncoder(httpMessageConverters: ObjectFactory<HttpMessageConverters>): Encoder =
         SpringEncoder(httpMessageConverters)
 
     @Bean
     @ConditionalOnMissingBean
-    fun decoder(httpMessageConverters: ObjectFactory<HttpMessageConverters>): Decoder =
+    fun userJsonFeignClientPlainWithSpringConfigDecoder(httpMessageConverters: ObjectFactory<HttpMessageConverters>): Decoder =
         ResponseEntityDecoder(SpringDecoder(httpMessageConverters))
 
     @Bean
     @ConditionalOnMissingBean
-    fun userJsonFeignClientPlainWithSpringConfig(props: Props, encoder: Encoder, decoder: Decoder): Client =
+    fun userJsonFeignClientPlainWithSpringConfig(
+        props: Props,
+        userJsonFeignClientPlainWithSpringConfigEncoder: Encoder,
+        userJsonFeignClientPlainWithSpringConfigDecoder: Decoder
+    ): Client =
         Feign
             .builder()
             .logger(Slf4jLogger())
             .logLevel(Logger.Level.FULL)
-            .encoder(encoder)
-            .decoder(decoder)
+            .encoder(userJsonFeignClientPlainWithSpringConfigEncoder)
+            .decoder(userJsonFeignClientPlainWithSpringConfigDecoder)
             .target(Client::class.java, props.url)
 }

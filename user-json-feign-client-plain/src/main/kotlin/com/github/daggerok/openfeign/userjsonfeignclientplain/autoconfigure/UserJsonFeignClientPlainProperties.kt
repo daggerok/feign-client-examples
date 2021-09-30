@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.ConstructorBinding
 
 /**
- * Configuration to connect user-json-openfeign-client to user-json-server.
+ * Configuration to connect user client to user server.
  */
 @ConstructorBinding
 @ConfigurationProperties("user-client")

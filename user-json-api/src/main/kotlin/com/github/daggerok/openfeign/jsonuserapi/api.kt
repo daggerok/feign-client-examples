@@ -7,14 +7,20 @@ data class CreateUserCommand(
     val age: Int = -1,
 )
 
-// Responses:
+// Queries:
 
-data class UsersDocument(
-    val users: List<UserDTO> = listOf(),
+data class GetUsersByAgeQuery(
+    val age: Int = -1,
 )
+
+// Responses:
 
 data class UserDocument(
     val userDTO: UserDTO = UserDTO(),
+)
+
+data class UsersDocument(
+    val users: List<UserDTO> = listOf(),
 )
 
 // DTOs:

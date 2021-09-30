@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConstructorBinding
  * Configuration to connect user-json-openfeign-client to user-json-server.
  */
 @ConstructorBinding
-@ConfigurationProperties("user-json-feign-client-plain-with-spring-config")
+@ConfigurationProperties("user-client-with-spring-config")
 data class UserProtoFeignClientPlainWithSpringConfigProperties(
     val host: String = "undefined",
     val port: Int = -1,

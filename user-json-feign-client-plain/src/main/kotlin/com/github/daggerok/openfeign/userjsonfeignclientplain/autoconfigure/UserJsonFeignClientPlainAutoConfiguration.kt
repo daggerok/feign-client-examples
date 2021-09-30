@@ -1,7 +1,7 @@
 package com.github.daggerok.openfeign.userjsonfeignclientplain.autoconfigure
 
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
-import com.github.daggerok.openfeign.userjsonfeignclientplain.UserJsonFeignClientPlain
+import com.github.daggerok.openfeign.userjsonfeignclientplain.UserClient
 import feign.Feign
 import feign.Logger
 import feign.jackson.JacksonDecoder
@@ -20,12 +20,12 @@ class UserJsonFeignClientPlainAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    fun userJsonFeignClientPlain(props: UserJsonFeignClientPlainProperties): UserJsonFeignClientPlain =
+    fun userJsonFeignClientPlain(props: UserJsonFeignClientPlainProperties): UserClient =
         Feign
             .builder()
             .logger(Slf4jLogger())
             .logLevel(Logger.Level.FULL)
             .encoder(JacksonEncoder(listOf(JavaTimeModule())))
             .decoder(JacksonDecoder(listOf(JavaTimeModule())))
-            .target(UserJsonFeignClientPlain::class.java, props.url)
+            .target(UserClient::class.java, props.url)
 }

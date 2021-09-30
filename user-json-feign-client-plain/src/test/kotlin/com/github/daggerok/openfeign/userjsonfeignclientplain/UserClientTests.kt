@@ -33,9 +33,9 @@ internal class UserJsonFeignClientPlainTestsApp
 @DisplayNameGeneration(ReplaceUnderscores::class)
 @DisplayName("User json feign client plain tests")
 @ContextConfiguration(classes = [UserJsonFeignClientPlainTestsApp::class])
-class UserJsonFeignClientPlainTests @Autowired constructor(
-    val userJsonFeignClientPlain: UserJsonFeignClientPlain,
+class UserClientTests @Autowired constructor(
     val objectMapper: ObjectMapper,
+    val userClient: UserClient,
 ) {
 
     @Test
@@ -76,7 +76,7 @@ class UserJsonFeignClientPlainTests @Autowired constructor(
         )
 
         // when
-        val document = userJsonFeignClientPlain.createUser(createUserCommand)
+        val document = userClient.createUser(createUserCommand)
 
         // then
         assertThat(document.userDTO.name).isEqualTo("Maksimko")
@@ -110,7 +110,7 @@ class UserJsonFeignClientPlainTests @Autowired constructor(
         )
 
         // when
-        val document = userJsonFeignClientPlain.getUsersByAge(38)
+        val document = userClient.getUsersByAge(38)
 
         // then
         val (name, age) = document.users.first()

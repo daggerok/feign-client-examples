@@ -22,6 +22,7 @@
         <module>user-json-feign-client-spring-cloud</module>
         <module>user-json-spring-web-server</module>
         <module>user-proto-api</module>
+        <module>user-proto-feign-client-plain-with-spring-config</module>
         <module>user-proto-spring-web-server</module>
     </modules>
     <properties>

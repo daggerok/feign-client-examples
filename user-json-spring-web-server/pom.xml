@@ -50,6 +50,12 @@
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.daggerok.openfeign.userjsonfeignclientplainwithspringconfig</groupId>
+            <artifactId>user-json-feign-client-plain-with-spring-config</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
         <!---->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -20,11 +20,6 @@
             <artifactId>user-json-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.daggerok.openfeign.userjsonfeignclientplain</groupId>
-            <artifactId>user-json-feign-client-plain</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <!---->
         <dependency>
             <groupId>com.github.daggerok.openfeign.userprotoapi</groupId>
@@ -32,11 +27,12 @@
             <version>${project.version}</version>
         </dependency>
         <!---->
+        <!-- ProtobufJsonFormatHttpMessageConverter required that dependency:
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java-util</artifactId>
             <version>${protobuf-java.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-kotlin</artifactId>
@@ -55,6 +51,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+        <!---->
+        <dependency>
+            <groupId>com.github.daggerok.openfeign.userjsonfeignclientplain</groupId>
+            <artifactId>user-json-feign-client-plain</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
         </dependency>
         <!---->
         <dependency>

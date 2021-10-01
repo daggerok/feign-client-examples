@@ -48,7 +48,6 @@ class ProtobufConfig {
 
     @Bean
     fun protobufMessageConverter(): ProtobufHttpMessageConverter =
-        // ProtobufJsonFormatHttpMessageConverter(); // protobuf-java-util
         ProtobufHttpMessageConverter()
 }
 

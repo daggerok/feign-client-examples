@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpStatus.CREATED
 import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter
-import org.springframework.http.converter.protobuf.ProtobufJsonFormatHttpMessageConverter
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -80,7 +79,9 @@ class ProtobufConfig {
 
     @Bean
     fun protobufMessageConverter(): ProtobufHttpMessageConverter =
-        ProtobufJsonFormatHttpMessageConverter() // protobuf-java-util
+        ProtobufHttpMessageConverter()
+    // ProtobufJsonFormatHttpMessageConverter() // use this if you want... It enforces the use of
+    // Protobuf 3 and its official library "com.google.protobuf:protobuf-java-util" for JSON processing.
 }
 
 @SpringBootApplication

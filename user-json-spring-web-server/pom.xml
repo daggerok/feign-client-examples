@@ -43,6 +43,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <!---->
+        <dependency>
+            <groupId>com.github.daggerok.openfeign.userjsonfeignclientplain</groupId>
+            <artifactId>user-json-feign-client-plain</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!---->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

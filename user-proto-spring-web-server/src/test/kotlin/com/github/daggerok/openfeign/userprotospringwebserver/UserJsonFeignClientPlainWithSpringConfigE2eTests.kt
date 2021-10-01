@@ -13,7 +13,6 @@ import org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT
 
 @TestInstance(PER_CLASS)
 @DisplayNameGeneration(ReplaceUnderscores::class)

@@ -2,7 +2,6 @@ package com.github.daggerok.openfeign.userjsonspringwebserver
 
 import com.github.daggerok.openfeign.jsonuserapi.CreateUserCommand
 import com.github.daggerok.openfeign.userjsonfeignclientplain.UserClient
-import java.util.concurrent.ThreadLocalRandom
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.DisplayNameGeneration

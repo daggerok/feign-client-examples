@@ -31,7 +31,7 @@ import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @DisplayNameGeneration(ReplaceUnderscores::class)
 @Suppress("SpringJavaInjectionPointsAutowiringInspection")
-class JsonServerApplicationTests @Autowired constructor(
+class UserJsonServerApplicationTests @Autowired constructor(
     @Value("\${server.servlet.context-path:/}") val contextPath: String,
     val restTemplate: TestRestTemplate,
     @LocalServerPort val port: Int,

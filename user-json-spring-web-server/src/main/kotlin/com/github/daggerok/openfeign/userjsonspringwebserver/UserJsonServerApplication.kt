@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class JsonResource {
+class UserJsonResource {
 
     @GetMapping("/api/v1/get-users/{age}")
     fun getUsers(@PathVariable("age") age: Optional<Int>): UsersDocument =
@@ -41,8 +41,8 @@ class JsonResource {
 }
 
 @SpringBootApplication
-class JsonServerApplication
+class UserJsonServerApplication
 
 fun main(args: Array<String>) {
-    runApplication<JsonServerApplication>(*args)
+    runApplication<UserJsonServerApplication>(*args)
 }

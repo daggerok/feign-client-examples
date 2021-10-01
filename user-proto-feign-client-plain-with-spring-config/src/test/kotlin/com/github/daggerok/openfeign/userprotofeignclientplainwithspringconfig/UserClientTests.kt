@@ -1,4 +1,4 @@
-package com.github.daggerok.openfeign.userprotofeignclientspringcloud
+package com.github.daggerok.openfeign.userprotofeignclientplainwithspringconfig
 
 import com.github.daggerok.openfeign.userprotoapi.CreateUserCommand
 import com.github.daggerok.openfeign.userprotoapi.UserDTO
@@ -24,17 +24,15 @@ import org.springframework.http.HttpStatus
 import org.springframework.test.context.ContextConfiguration
 
 @SpringBootApplication
-internal class UserProtoSpringCloudFeignClientTestsApp
+internal class UserProtoFeignClientPlainWithSpringConfigTestsApp
 
 @TestInstance(PER_CLASS)
 @AutoConfigureWireMock(port = 0)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @DisplayNameGeneration(ReplaceUnderscores::class)
-@DisplayName("User proto spring-cloud openfeign client tests")
-@ContextConfiguration(classes = [UserProtoSpringCloudFeignClientTestsApp::class])
-class UserProtoFeignClientSpringCloudTests @Autowired constructor(
-    val userProtoFeignClientSpringCloud: UserProtoFeignClientSpringCloud,
-) {
+@DisplayName("User proto feign client plain with spring config tests")
+@ContextConfiguration(classes = [UserProtoFeignClientPlainWithSpringConfigTestsApp::class])
+class UserClientTests(@Autowired val userClient: UserClient) {
 
     @Test
     fun `should create user`() {
@@ -49,10 +47,11 @@ class UserProtoFeignClientSpringCloudTests @Autowired constructor(
 
         // and setup
         WireMock.stubFor(
-            WireMock.post(urlPathEqualTo("/api/v1/create-user"))
+            WireMock
+                .post(urlPathEqualTo("/api/v1/create-user"))
                 .withHeader("Content-Type", containing("application/x-protobuf"))
                 .withRequestBody(
-                    binaryEqualTo( // equalToJson( // equalTo(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(..))
+                    binaryEqualTo( // equalToJson( // equalTo(...
                         createUserCommand.toByteArray()
                     )
                 )
@@ -75,7 +74,7 @@ class UserProtoFeignClientSpringCloudTests @Autowired constructor(
         )
 
         // when
-        val document = userProtoFeignClientSpringCloud.createUser(createUserCommand)
+        val document = userClient.createUser(createUserCommand)
 
         // then
         assertThat(document.userDTO.name).isEqualTo("Maksimko")
@@ -86,7 +85,8 @@ class UserProtoFeignClientSpringCloudTests @Autowired constructor(
     fun `should get users by age 38`() {
         // setup
         WireMock.stubFor(
-            WireMock.get(urlPathEqualTo("/api/v1/get-users/38"))
+            WireMock
+                .get(urlPathEqualTo("/api/v1/get-users/38"))
                 .withHeader("Content-Type", containing("application/x-protobuf"))
                 .willReturn(
                     WireMock
@@ -107,7 +107,7 @@ class UserProtoFeignClientSpringCloudTests @Autowired constructor(
         )
 
         // when
-        val document = userProtoFeignClientSpringCloud.getUsersByAge(38)
+        val document = userClient.getUsersByAge(38)
 
         // then
         val dto = document.usersList.first()

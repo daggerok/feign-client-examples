@@ -15,7 +15,7 @@ import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter
 
 @Configuration
 @ConditionalOnMissingClass
-class ProtobufConfig {
+class UserProtoFeignClientPlainWithSpringConfigProtobufConfig {
 
     @Bean
     @ConditionalOnMissingBean

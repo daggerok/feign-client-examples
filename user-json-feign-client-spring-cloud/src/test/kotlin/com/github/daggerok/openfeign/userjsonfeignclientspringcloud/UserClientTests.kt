@@ -33,10 +33,7 @@ internal class UserJsonSpringCloudFeignClientTestsApp
 @DisplayNameGeneration(ReplaceUnderscores::class)
 @DisplayName("User json spring-cloud openfeign client tests")
 @ContextConfiguration(classes = [UserJsonSpringCloudFeignClientTestsApp::class])
-class UserJsonFeignClientSpringCloudTests @Autowired constructor(
-    val userJsonFeignClientSpringCloud: UserJsonFeignClientSpringCloud,
-    val objectMapper: ObjectMapper,
-) {
+class UserClientTests @Autowired constructor(val userClient: UserClient, val objectMapper: ObjectMapper) {
 
     @Test
     fun `should create user`() {
@@ -76,7 +73,7 @@ class UserJsonFeignClientSpringCloudTests @Autowired constructor(
         )
 
         // when
-        val document = userJsonFeignClientSpringCloud.createUser(createUserCommand)
+        val document = userClient.createUser(createUserCommand)
 
         // then
         assertThat(document.userDTO.name).isEqualTo("Maksimko")
@@ -110,7 +107,7 @@ class UserJsonFeignClientSpringCloudTests @Autowired constructor(
         )
 
         // when
-        val document = userJsonFeignClientSpringCloud.getUsersByAge(38)
+        val document = userClient.getUsersByAge(38)
 
         // then
         val (name, age) = document.users.first()

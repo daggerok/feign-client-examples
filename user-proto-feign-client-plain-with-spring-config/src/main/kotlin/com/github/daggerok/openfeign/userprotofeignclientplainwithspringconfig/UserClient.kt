@@ -8,7 +8,7 @@ import feign.Param
 import feign.RequestLine
 
 @Headers("Content-Type: application/x-protobuf")
-interface UserProtoFeignClientPlainWithSpringConfig {
+interface UserClient {
 
     @RequestLine("POST /api/v1/create-user")
     fun createUser(request: CreateUserCommand): UserDocument

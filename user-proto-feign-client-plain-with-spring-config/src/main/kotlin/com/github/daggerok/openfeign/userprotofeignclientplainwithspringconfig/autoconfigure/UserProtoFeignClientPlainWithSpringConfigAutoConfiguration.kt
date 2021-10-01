@@ -1,6 +1,6 @@
 package com.github.daggerok.openfeign.userprotofeignclientplainwithspringconfig.autoconfigure
 
-import com.github.daggerok.openfeign.userprotofeignclientplainwithspringconfig.UserProtoFeignClientPlainWithSpringConfig
+import com.github.daggerok.openfeign.userprotofeignclientplainwithspringconfig.UserClient
 import feign.Feign
 import feign.Logger
 import feign.codec.Decoder
@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Import
 
 @Configuration
 @ConditionalOnMissingClass
-@Import(ProtobufConfig::class)
+@Import(UserProtoFeignClientPlainWithSpringConfigProtobufConfig::class)
 @EnableConfigurationProperties(UserProtoFeignClientPlainWithSpringConfigProperties::class)
 class UserProtoFeignClientPlainWithSpringConfigAutoConfiguration {
 
@@ -25,12 +25,12 @@ class UserProtoFeignClientPlainWithSpringConfigAutoConfiguration {
         protobufEncoder: Encoder,
         protobufDecoder: Decoder,
         props: UserProtoFeignClientPlainWithSpringConfigProperties,
-    ): UserProtoFeignClientPlainWithSpringConfig =
+    ): UserClient =
         Feign
             .builder()
             .logger(Slf4jLogger())
             .logLevel(Logger.Level.FULL)
             .encoder(protobufEncoder)
             .decoder(protobufDecoder)
-            .target(UserProtoFeignClientPlainWithSpringConfig::class.java, props.url)
+            .target(UserClient::class.java, props.url)
 }

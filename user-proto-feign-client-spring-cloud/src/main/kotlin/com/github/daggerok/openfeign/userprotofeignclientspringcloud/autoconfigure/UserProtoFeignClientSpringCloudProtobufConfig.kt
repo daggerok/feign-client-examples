@@ -8,10 +8,10 @@ import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter
 
 @Configuration
 @ConditionalOnMissingClass
-class ProtobufConfig {
+class UserProtoFeignClientSpringCloudProtobufConfig {
 
     @Bean
     @ConditionalOnMissingBean
-    fun protobufMessageConverter(): ProtobufHttpMessageConverter =
+    fun userProtoFeignClientSpringCloudProtobufMessageConverter(): ProtobufHttpMessageConverter =
         ProtobufHttpMessageConverter()
 }

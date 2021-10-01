@@ -14,18 +14,18 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT
 
 @TestInstance(PER_CLASS)
+@DisplayNameGeneration(ReplaceUnderscores::class)
+@Suppress("SpringJavaInjectionPointsAutowiringInspection")
 @SpringBootTest(
     webEnvironment = DEFINED_PORT,
     properties = [
-        "server.port=8765",
+        "server.port=8764",
         "user-client.host=127.0.0.1",
         "user-client.port=\${server.port}",
         "user-client.contextPath=\${server.servlet.context-path}",
     ],
 )
-@DisplayNameGeneration(ReplaceUnderscores::class)
-@DisplayName("User json feign client plain tests")
-@Suppress("SpringJavaInjectionPointsAutowiringInspection")
+@DisplayName("User json feign client plain with spring config tests")
 class UserJsonFeignClientPlainWithSpringConfigE2eTests(@Autowired val userClient: UserClient) {
 
     @Test

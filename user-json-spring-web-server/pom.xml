@@ -56,6 +56,12 @@
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.daggerok.openfeign.userjsonfeignclientspringcloud</groupId>
+            <artifactId>user-json-feign-client-spring-cloud</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
         <!---->
         <dependency>
             <groupId>org.springframework.boot</groupId>

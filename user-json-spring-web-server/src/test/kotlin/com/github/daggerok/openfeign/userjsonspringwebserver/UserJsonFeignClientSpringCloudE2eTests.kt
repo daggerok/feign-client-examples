@@ -1,8 +1,7 @@
 package com.github.daggerok.openfeign.userjsonspringwebserver
 
 import com.github.daggerok.openfeign.jsonuserapi.CreateUserCommand
-import com.github.daggerok.openfeign.userjsonfeignclientplain.UserClient
-import java.util.concurrent.ThreadLocalRandom
+import com.github.daggerok.openfeign.userjsonfeignclientspringcloud.UserClient
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.DisplayNameGeneration
@@ -16,18 +15,19 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFIN
 
 @TestInstance(PER_CLASS)
 @DisplayNameGeneration(ReplaceUnderscores::class)
-@DisplayName("User json feign client plain tests")
+@DisplayName("User json feign client spring-cloud tests")
 @Suppress("SpringJavaInjectionPointsAutowiringInspection")
 @SpringBootTest(
     webEnvironment = DEFINED_PORT,
     properties = [
-        "server.port=8763",
+        "server.port=8765",
         "user-client.host=127.0.0.1",
         "user-client.port=\${server.port}",
-        "user-client.contextPath=\${server.servlet.context-path}",
+        "user-client.context-path=\${server.servlet.context-path}",
+        "user-client.url=\${user-client.host}:\${user-client.port}\${user-client.context-path}",
     ],
 )
-class UserJsonFeignClientPlainE2eTests(@Autowired val userClient: UserClient) {
+class UserJsonFeignClientSpringCloudE2eTests(@Autowired val userClient: UserClient) {
 
     @Test
     fun `should create user`() {

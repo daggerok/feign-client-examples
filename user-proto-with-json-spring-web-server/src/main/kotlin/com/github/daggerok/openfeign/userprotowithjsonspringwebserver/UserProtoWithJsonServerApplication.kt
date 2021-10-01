@@ -80,8 +80,8 @@ class ProtobufConfig {
     @Bean
     fun protobufMessageConverter(): ProtobufHttpMessageConverter =
         ProtobufHttpMessageConverter()
-    // ProtobufJsonFormatHttpMessageConverter() // use this if you want... It enforces the use of
-    // Protobuf 3 and its official library "com.google.protobuf:protobuf-java-util" for JSON processing.
+        // ProtobufJsonFormatHttpMessageConverter() // use this if you want... It enforces the use of
+        // Protobuf 3 and its official library "com.google.protobuf:protobuf-java-util" for JSON processing.
 }
 
 @SpringBootApplication

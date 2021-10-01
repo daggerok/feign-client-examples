@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 
 @FeignClient(
-    name = "user-proto-feign-client-spring-cloud",
-    url = "\${user-proto-feign-client-spring-cloud.url}",
+    name = "user-client",
+    url = "\${user-client.url}",
 )
-interface UserProtoFeignClientSpringCloud {
+interface UserClient {
 
     @PostMapping(
         path = ["/api/v1/create-user"],

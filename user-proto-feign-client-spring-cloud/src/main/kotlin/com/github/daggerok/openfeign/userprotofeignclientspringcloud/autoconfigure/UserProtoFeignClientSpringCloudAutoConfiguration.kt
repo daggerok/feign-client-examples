@@ -1,6 +1,6 @@
 package com.github.daggerok.openfeign.userprotofeignclientspringcloud.autoconfigure
 
-import com.github.daggerok.openfeign.userprotofeignclientspringcloud.UserProtoFeignClientSpringCloud
+import com.github.daggerok.openfeign.userprotofeignclientspringcloud.UserClient
 import feign.Logger
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass
@@ -12,9 +12,8 @@ import org.springframework.context.annotation.Import
 
 @Configuration
 @ConditionalOnMissingClass
-@Import(ProtobufConfig::class)
-@EnableFeignClients(clients = [UserProtoFeignClientSpringCloud::class])
-@EnableConfigurationProperties(UserProtoFeignClientSpringCloudProperties::class)
+@EnableFeignClients(clients = [UserClient::class])
+@Import(UserProtoFeignClientSpringCloudProtobufConfig::class)
 class UserProtoFeignClientSpringCloudAutoConfiguration {
 
     @Bean

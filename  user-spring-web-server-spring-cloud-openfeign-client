@@ -1,9 +1,0 @@
-[master de6baff] user-spring-web-server-spring-cloud-openfeign
- 9 files changed, 3 insertions(+), 3 deletions(-)
- rename {user-spring-web-server-spring-cloud-openfeign => user-spring-web-server-spring-cloud-openfeign-client}/pom.xml (96%)
- rename {user-spring-web-server-spring-cloud-openfeign => user-spring-web-server-spring-cloud-openfeign-client}/src/main/kotlin/com/github/daggerok/openfeign/userfeignclientspringcloud/UserClient.kt (100%)
- rename {user-spring-web-server-spring-cloud-openfeign => user-spring-web-server-spring-cloud-openfeign-client}/src/main/kotlin/com/github/daggerok/openfeign/userfeignclientspringcloud/autoconfigure/UserSpringCloudOpenFeignClientAutoConfiguration.kt (100%)
- rename {user-spring-web-server-spring-cloud-openfeign => user-spring-web-server-spring-cloud-openfeign-client}/src/main/kotlin/com/github/daggerok/openfeign/userfeignclientspringcloud/autoconfigure/UserSpringCloudOpenFeignClientProtobufConfig.kt (100%)
- rename {user-spring-web-server-spring-cloud-openfeign => user-spring-web-server-spring-cloud-openfeign-client}/src/main/resources/META-INF/spring.factories (100%)
- rename {user-spring-web-server-spring-cloud-openfeign => user-spring-web-server-spring-cloud-openfeign-client}/src/test/kotlin/com/github/daggerok/openfeign/userfeignclientspringcloud/UserClientTests.kt (100%)
- rename {user-spring-web-server-spring-cloud-openfeign => user-spring-web-server-spring-cloud-openfeign-client}/src/test/resources/application-default.properties (100%)

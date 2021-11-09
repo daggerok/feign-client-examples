@@ -1,4 +1,4 @@
-package com.github.daggerok.openfeign.userfeignclientspringcloud
+package com.github.daggerok.openfeign.userspringcloudopenfeignclient
 
 import com.github.daggerok.openfeign.userprotoapi.CreateUserCommand
 import com.github.daggerok.openfeign.userprotoapi.UserDocument

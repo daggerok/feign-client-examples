@@ -1,8 +1,8 @@
 package com.github.daggerok.openfeign.userspringwebserver
 
-import com.github.daggerok.openfeign.userfeignclientspringcloud.UserClient
 import com.github.daggerok.openfeign.userprotoapi.CreateUserCommand
 import com.github.daggerok.openfeign.userprotoapi.UserDTO
+import com.github.daggerok.openfeign.userspringcloudopenfeignclient.UserClient
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName

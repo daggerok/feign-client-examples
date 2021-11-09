@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.github.daggerok.openfeign.userfeignclientspringcloud.autoconfigure.UserSpringCloudOpenFeignClientAutoConfiguration
+  com.github.daggerok.openfeign.userspringcloudopenfeignclient.autoconfigure.UserSpringCloudOpenFeignClientAutoConfiguration

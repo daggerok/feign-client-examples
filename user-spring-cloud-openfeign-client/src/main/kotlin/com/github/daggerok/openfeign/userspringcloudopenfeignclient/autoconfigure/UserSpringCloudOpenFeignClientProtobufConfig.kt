@@ -1,4 +1,4 @@
-package com.github.daggerok.openfeign.userfeignclientspringcloud.autoconfigure
+package com.github.daggerok.openfeign.userspringcloudopenfeignclient.autoconfigure
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass

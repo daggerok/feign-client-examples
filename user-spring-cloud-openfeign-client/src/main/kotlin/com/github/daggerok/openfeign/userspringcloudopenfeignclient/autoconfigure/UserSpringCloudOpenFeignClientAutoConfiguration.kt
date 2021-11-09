@@ -1,6 +1,6 @@
-package com.github.daggerok.openfeign.userfeignclientspringcloud.autoconfigure
+package com.github.daggerok.openfeign.userspringcloudopenfeignclient.autoconfigure
 
-import com.github.daggerok.openfeign.userfeignclientspringcloud.UserClient
+import com.github.daggerok.openfeign.userspringcloudopenfeignclient.UserClient
 import feign.Logger
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass

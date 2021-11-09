@@ -1,0 +1,47 @@
+### createUser, post: application/json, receive: application/x-protobuf
+### echo '{"userDTO":{"age":38,"name":"Maksim"}}' | http post http://localhost:8080/user-spring-web-server/api/v1
+### http --ignore-stdin post http://localhost:8080/user-spring-web-server/api/v1 userDTO:='{"age":38,"name":"Maksim"}' Accept:application/x-protobuf
+POST http://localhost:8080/user-spring-web-server/api/v1
+Content-Type: application/json
+Accept: application/x-protobuf
+
+{
+  "userDTO": {
+    "age": 38,
+    "name": "Maksim"
+  }
+}
+
+### createUser, post: application/json, receive: application/json
+### http -I post http://localhost:8080/user-spring-web-server/api/v1 userDTO:='{"age":38,"name":"Maksim"}' Accept:application/json
+### echo '{"userDTO":{"age":38,"name":"Maksim"}}' | http post http://localhost:8080/user-spring-web-server/api/v1 Accept:application/json
+POST http://localhost:8080/user-spring-web-server/api/v1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "userDTO": {
+    "age": 38,
+    "name": "Maksim"
+  }
+}
+
+### getAllUsers, receive: application/x-protobuf
+### http -I http://localhost:8080/user-spring-web-server/api/v1
+GET http://localhost:8080/user-spring-web-server/api/v1
+Accept: application/x-protobuf
+
+### getAllUsers, receive: application/json
+### http -I http://localhost:8080/user-spring-web-server/api/v1 Accept:application/json
+GET http://localhost:8080/user-spring-web-server/api/v1
+Accept: application/json
+
+### searchUsersByAge, receive: application/x-protobuf
+### http -I http://localhost:8080/user-spring-web-server/api/v1/1
+GET http://localhost:8080/user-spring-web-server/api/v1/1
+Accept: application/x-protobuf
+
+### searchUsersByAge, receive: application/json
+### http -I http://localhost:8080/user-spring-web-server/api/v1/1 Accept:application/json
+GET http://localhost:8080/user-spring-web-server/api/v1/1
+Accept: application/json

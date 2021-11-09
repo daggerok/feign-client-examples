@@ -19,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFIN
 @SpringBootTest(
     webEnvironment = DEFINED_PORT,
     properties = [
-        "server.port=8764",
+        "server.port=8761",
         "user-client.host=127.0.0.1",
         "user-client.port=\${server.port}",
         "user-client.contextPath=\${server.servlet.context-path}",

@@ -49,7 +49,7 @@
         <!---->
         <dependency>
             <groupId>com.github.daggerok.openfeign.userfeignclientspringcloud</groupId>
-            <artifactId>user-spring-web-server-spring-cloud-openfeign</artifactId>
+            <artifactId>user-spring-web-server-spring-cloud-openfeign-client</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>

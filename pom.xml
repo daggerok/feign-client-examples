@@ -25,7 +25,7 @@
         <module>user-proto-feign-client-spring-cloud</module>
         <module>user-proto-spring-web-server</module>
         <module>user-proto-with-json-spring-web-server</module>
-        <module>user-spring-web-server-spring-cloud-openfeign</module>
+        <module>user-spring-web-server-spring-cloud-openfeign-client</module>
         <module>user-spring-web-server</module>
     </modules>
     <properties>

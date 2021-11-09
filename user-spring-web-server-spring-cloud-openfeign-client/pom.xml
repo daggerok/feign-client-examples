@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.daggerok.openfeign.userfeignclientspringcloud</groupId>
-    <artifactId>user-spring-web-server-spring-cloud-openfeign</artifactId>
+    <artifactId>user-spring-web-server-spring-cloud-openfeign-client</artifactId>
     <name>${project.artifactId}</name>
     <description>JSON API</description>
     <dependencies>

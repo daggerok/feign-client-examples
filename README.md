@@ -1,4 +1,7 @@
 # feign client examples
+Spring MVC support for JSON + Protobuf. see [user-spring-web-server](./user-spring-web-server)
+
+## development
 
 ```bash
 ./mvnw

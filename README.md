@@ -7,6 +7,11 @@ Spring MVC support for JSON + Protobuf. see [user-spring-web-server](./user-spri
 ./mvnw
 ```
 
+## limitations
+
+* spring-boot 2.6.+ version doesn't support
+* spring-cloud 2021.+ version doesn't support
+
 ## rtfm
 
 * http://wiremock.org/docs/request-matching/

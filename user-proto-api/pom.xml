@@ -73,8 +73,11 @@
                             <inputDirectories>
                                 <include>src/main/proto</include>
                             </inputDirectories>
-                            <cleanOutputFolder>true</cleanOutputFolder>
                             <outputDirectory>src/main/gen</outputDirectory>
+                            <includeStdTypes>true</includeStdTypes>
+                            <cleanOutputFolder>true</cleanOutputFolder>
+                            <includeMavenTypes>direct</includeMavenTypes>
+                            <includeMavenTypes>transitive</includeMavenTypes>
                         </configuration>
                     </execution>
                 </executions>
